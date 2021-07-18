@@ -23,6 +23,7 @@
 		65D64DAC26A3E1CC00ACD6CB /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D64DAB26A3E1CC00ACD6CB /* ChatView.swift */; };
 		65D64DAE26A3E30900ACD6CB /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D64DAD26A3E30900ACD6CB /* MessageModel.swift */; };
 		65D64DB026A3E36A00ACD6CB /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D64DAF26A3E36A00ACD6CB /* UserModel.swift */; };
+		65D64DB226A3E73100ACD6CB /* PreviewValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D64DB126A3E73100ACD6CB /* PreviewValues.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		65D64DAB26A3E1CC00ACD6CB /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		65D64DAD26A3E30900ACD6CB /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		65D64DAF26A3E36A00ACD6CB /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		65D64DB126A3E73100ACD6CB /* PreviewValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewValues.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				65D64D8926A3D69E00ACD6CB /* ChatApp_SwiftUIApp.swift */,
 				65D64DA926A3DF2500ACD6CB /* MessageView.swift */,
 				65D64DAB26A3E1CC00ACD6CB /* ChatView.swift */,
+				65D64DB126A3E73100ACD6CB /* PreviewValues.swift */,
 				65D64D8B26A3D69E00ACD6CB /* ContentView.swift */,
 				65D64D8D26A3D6A100ACD6CB /* Assets.xcassets */,
 				65D64D9226A3D6A100ACD6CB /* Info.plist */,
@@ -186,6 +189,7 @@
 				65D64D8C26A3D69E00ACD6CB /* ContentView.swift in Sources */,
 				65D64DB026A3E36A00ACD6CB /* UserModel.swift in Sources */,
 				65D64D8A26A3D69E00ACD6CB /* ChatApp_SwiftUIApp.swift in Sources */,
+				65D64DB226A3E73100ACD6CB /* PreviewValues.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

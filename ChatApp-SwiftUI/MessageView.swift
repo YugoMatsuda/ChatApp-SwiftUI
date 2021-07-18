@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MessageView: View {
+    let message: MessageModel
+    
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
             Image(systemName: "person.fill")
@@ -17,10 +19,10 @@ struct MessageView: View {
                 .clipShape(Circle())
             
             VStack(alignment: .leading, spacing: 4) {
-                Text("Yugo")
+                Text(message.user.name)
                     .font(.headline)
-                Text("アイウエオアイウエオアイウエオアイウエオ")
-                Text("2021-7-18 12:32")
+                Text(message.text)
+                Text(message.date.description)
                     .font(.footnote)
 
             }
@@ -28,8 +30,9 @@ struct MessageView: View {
     }
 }
 
+
 struct MessageView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageView()
+        MessageView(message: PreviewValues.message)
     }
 }

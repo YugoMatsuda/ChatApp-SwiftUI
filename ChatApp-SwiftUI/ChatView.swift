@@ -8,21 +8,24 @@
 import SwiftUI
 
 struct ChatView: View {
+    let messages: [MessageModel]
+
     var body: some View {
         ScrollView {
-            LazyVStack(spacing: 0) {
-                ForEach(1 ... 10, id: \.self) { _ in
-                    MessageView()
+            LazyVStack(alignment: .leading, spacing: 0) {
+                ForEach(messages) { message in
+                    MessageView(message: message)
                         .padding()
                     Divider()
                 }
             }
         }
     }
+    
 }
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView()
+        ChatView(messages: PreviewValues.messages)
     }
 }

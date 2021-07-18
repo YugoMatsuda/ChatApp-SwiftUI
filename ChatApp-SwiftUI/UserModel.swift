@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserModel {
+struct UserModel: Codable {
     let id: ID
     var name: String
     
@@ -16,7 +16,7 @@ struct UserModel {
         self.name = name
     }
     
-    struct ID: Hashable, ExpressibleByStringLiteral {
+    struct ID: Hashable, ExpressibleByStringLiteral, Codable {
         let value: String
         
         init(_ value: String) {
@@ -25,6 +25,17 @@ struct UserModel {
         
         init(stringLiteral value: StringLiteralType) {
             self.init(value)
+        }
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.singleValueContainer()
+            let value = try container.decode(String.self)
+            self.init(value)
+        }
+        
+        func encode(to encoder: Encoder) throws {
+            var container = encoder.singleValueContainer()
+            try container.encode(value)
         }
     }
 }

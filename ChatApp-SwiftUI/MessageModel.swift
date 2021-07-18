@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MessageModel: Identifiable {
+struct MessageModel: Identifiable, Codable {
     let id: ID
     var user: UserModel
     var text: String
@@ -20,7 +20,7 @@ struct MessageModel: Identifiable {
         self.date = date
     }
     
-    struct ID: Hashable {
+    struct ID: Hashable, Codable {
         let value: UUID
         init(_ value: UUID) {
             self.value = value
@@ -28,6 +28,17 @@ struct MessageModel: Identifiable {
         
         init() {
             self.init(UUID())
+        }
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.singleValueContainer()
+            let value = try container.decode(UUID.self)
+            self.init(value)
+        }
+        
+        func encode(to encoder: Encoder) throws {
+            var container = encoder.singleValueContainer()
+            try container.encode(value)
         }
     }
 }

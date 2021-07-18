@@ -12,7 +12,7 @@ struct ChatStateView: View {
     @StateObject private var state: ChatState<DummyDatabase> = .init()
     
     var body: some View {
-        ChatView(messages: state.messages,postMessage: state.postMessage)
+        ChatView(messages: state.messages, hasWriteError: state.hasWriteError, postMessage: state.postMessage)
             .onAppear{ state.activate()}
             .onDisappear{ state.deActivate()}
     }

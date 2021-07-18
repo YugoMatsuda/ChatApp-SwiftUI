@@ -9,9 +9,21 @@ import SwiftUI
 
 struct MessageView: View {
     var body: some View {
-        VStack {
-            Text("Yugo")
-                .font(.headline)
+        HStack(alignment: .top, spacing: 16) {
+            Image(systemName: "person.fill")
+                .resizable()
+                .frame(width: 50, height: 50)
+                .background(Color(UIColor.systemGray5))
+                .clipShape(Circle())
+            
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Yugo")
+                    .font(.headline)
+                Text("アイウエオアイウエオアイウエオアイウエオ")
+                Text("2021-7-18 12:32")
+                    .font(.footnote)
+
+            }
         }
     }
 }

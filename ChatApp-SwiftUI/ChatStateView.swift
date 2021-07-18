@@ -9,10 +9,12 @@ import SwiftUI
 
 struct ChatStateView: View {
     //ObservableObjectの変更を検知できるのがStateObject　値の場合はState、クラスの場合はStateObject
-    @StateObject private var state: ChatState = .init()
+    @StateObject private var state: ChatState<DummyDatabase> = .init()
     
     var body: some View {
         ChatView(messages: state.messages,postMessage: state.postMessage)
+            .onAppear{ state.activate()}
+            .onDisappear{ state.deActivate()}
     }
 }
 

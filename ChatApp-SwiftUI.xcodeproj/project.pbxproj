@@ -26,7 +26,7 @@
 		65D64DB226A3E73100ACD6CB /* PreviewValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D64DB126A3E73100ACD6CB /* PreviewValues.swift */; };
 		65D64DB426A3F0EE00ACD6CB /* ChatState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D64DB326A3F0EE00ACD6CB /* ChatState.swift */; };
 		65D64DB626A3F1F700ACD6CB /* ChatStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D64DB526A3F1F700ACD6CB /* ChatStateView.swift */; };
-		65D64DB826A3F8B500ACD6CB /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D64DB726A3F8B500ACD6CB /* Database.swift */; };
+		65D64DB826A3F8B500ACD6CB /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D64DB726A3F8B500ACD6CB /* DatabaseProtocol.swift */; };
 		65D64DBA26A3FDBA00ACD6CB /* DummyDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D64DB926A3FDBA00ACD6CB /* DummyDatabase.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +45,7 @@
 		65D64DB126A3E73100ACD6CB /* PreviewValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewValues.swift; sourceTree = "<group>"; };
 		65D64DB326A3F0EE00ACD6CB /* ChatState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatState.swift; sourceTree = "<group>"; };
 		65D64DB526A3F1F700ACD6CB /* ChatStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatStateView.swift; sourceTree = "<group>"; };
-		65D64DB726A3F8B500ACD6CB /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		65D64DB726A3F8B500ACD6CB /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
 		65D64DB926A3FDBA00ACD6CB /* DummyDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyDatabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,7 +93,7 @@
 				65D64DAB26A3E1CC00ACD6CB /* ChatView.swift */,
 				65D64DB526A3F1F700ACD6CB /* ChatStateView.swift */,
 				65D64DB926A3FDBA00ACD6CB /* DummyDatabase.swift */,
-				65D64DB726A3F8B500ACD6CB /* Database.swift */,
+				65D64DB726A3F8B500ACD6CB /* DatabaseProtocol.swift */,
 				65D64DB326A3F0EE00ACD6CB /* ChatState.swift */,
 				65D64DB126A3E73100ACD6CB /* PreviewValues.swift */,
 				65D64D8B26A3D69E00ACD6CB /* ContentView.swift */,
@@ -204,7 +204,7 @@
 				65D64DBA26A3FDBA00ACD6CB /* DummyDatabase.swift in Sources */,
 				65D64DB026A3E36A00ACD6CB /* UserModel.swift in Sources */,
 				65D64D8A26A3D69E00ACD6CB /* ChatApp_SwiftUIApp.swift in Sources */,
-				65D64DB826A3F8B500ACD6CB /* Database.swift in Sources */,
+				65D64DB826A3F8B500ACD6CB /* DatabaseProtocol.swift in Sources */,
 				65D64DB226A3E73100ACD6CB /* PreviewValues.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

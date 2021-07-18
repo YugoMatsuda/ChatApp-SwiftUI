@@ -8,15 +8,41 @@
 import SwiftUI
 
 struct ChatView: View {
-    let messages: [MessageModel]
-
+    @State var messages: [MessageModel]
+    //Stateの値が変更されるとbodyが再実行される　51ふん50秒　single source truth
+    @State private var messageText = ""
+    
+    @Namespace private var bottomId
+    
     var body: some View {
-        ScrollView {
-            LazyVStack(alignment: .leading, spacing: 0) {
-                ForEach(messages) { message in
-                    MessageView(message: message)
+        VStack {
+            ScrollViewReader { proxy in
+                ScrollView {
+                    LazyVStack(alignment: .leading, spacing: 0) {
+                        ForEach(messages) { message in
+                            MessageView(message: message)
+                                .padding()
+                            Divider()
+                        }
+                        Divider()
+                            .id(bottomId)
+                    }
+                }
+                Divider()
+                HStack {
+                    TextField("", text: $messageText)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
-                    Divider()
+                    Button(action: {
+                        let message = MessageModel(user: PreviewValues.user, text: messageText, date: Date())
+                        messages.append(message)
+                        messageText = ""
+                        DispatchQueue.main.async {
+                            proxy.scrollTo(bottomId)
+                        }
+                    }, label: {
+                        Image(systemName: "paperplane")
+                    })
                 }
             }
         }

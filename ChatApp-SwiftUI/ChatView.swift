@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ChatView: View {
-    @State var messages: [MessageModel]
+    let messages: [MessageModel]
     //Stateの値が変更されるとbodyが再実行される　51ふん50秒　single source truth
     @State private var messageText = ""
     
     @Namespace private var bottomId
+    
+    let postMessage: (MessageModel, @escaping (Result<Void, Error>) -> Void) -> Void
     
     var body: some View {
         VStack {
@@ -35,11 +37,17 @@ struct ChatView: View {
                         .padding()
                     Button(action: {
                         let message = MessageModel(user: PreviewValues.user, text: messageText, date: Date())
-                        messages.append(message)
-                        messageText = ""
-                        DispatchQueue.main.async {
-                            proxy.scrollTo(bottomId)
+                        postMessage(message) { result in
+                            do {
+                                try                             result.get()
+                                DispatchQueue.main.async {
+                                    proxy.scrollTo(bottomId)
+                                }
+                            } catch {
+                                messageText = message.text
+                            }
                         }
+                        messageText = ""
                     }, label: {
                         Image(systemName: "paperplane")
                     })
@@ -52,6 +60,6 @@ struct ChatView: View {
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView(messages: PreviewValues.messages)
+        ChatView(messages: PreviewValues.messages) {_, _ in}
     }
 }

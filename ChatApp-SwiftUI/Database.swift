@@ -14,7 +14,7 @@ enum Database: DatabaseProtocol {
     static func messagges() -> AnyPublisher<[MessageModel], Error> {
         let sublect: PassthroughSubject<[MessageModel], Error> = .init()
         let db =  Firestore.firestore()
-        db.collection("messages")
+        let listner = db.collection("messages")
             .order(by: "date")
             .addSnapshotListener { querySnapShot, error in
             guard let querySnapShot = querySnapShot else {
@@ -28,7 +28,7 @@ enum Database: DatabaseProtocol {
                 sublect.send(completion: .failure(error))
             }
         }
-        return sublect.eraseToAnyPublisher()
+        return sublect.handleEvents(receiveCancel: { listner.remove()}).eraseToAnyPublisher()
     }
     
     static func postMessage(_ message: MessageModel, completion: @escaping (Result<Void,Error>) -> Void) {
